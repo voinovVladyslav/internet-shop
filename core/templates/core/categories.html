@@ -1,0 +1,35 @@
+{% load static %} {% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% bootstrap_css %}
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'core/style.css' %}"
+        />
+        <title>Home</title>
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <div class="d-flex container flex-wrap">
+            {% for category in categories %}
+            <div class="card m-3" style="width: 18rem">
+                <img
+                    src="{{ category.image.url }}"
+                    class="card-img-top"
+                    alt="category"
+                />
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <a href="#" class="btn btn-primary">Select</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% include 'footer.html' %}
+    </body>
+</html>
