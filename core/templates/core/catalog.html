@@ -6,25 +6,24 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {% bootstrap_css %}
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="{% static 'core/style.css' %}"
-        />
-        <title>Home</title>
+        <title>Catalog</title>
     </head>
     <body>
         {% include 'header.html' %}
-        <div class="d-flex container flex-wrap">
-            {% for category in categories %}
+        <div class="container-fluid"></div>
+        <div class="container d-flex flex-wrap">
+            {% for item in items %}
             <div class="card m-3" style="width: 18rem">
                 <img
-                    src="{{ category.image.url }}"
+                    src="{{ item.image.url }}"
                     class="card-img-top"
-                    alt="category"
+                    alt="item"
                 />
                 <div class="card-body">
-                    <h5 class="card-title">{{ category.name }}</h5>
+                    <div class="">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <h5 class="card-title">{{ item.price }}$</h5>
+                    </div>
                     <a href="#" class="btn btn-primary">Select</a>
                 </div>
             </div>
