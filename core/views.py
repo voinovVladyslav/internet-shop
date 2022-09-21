@@ -15,3 +15,8 @@ class ItemListView(generic.ListView):
     model = Item
     template_name = 'core/catalog.html'
     context_object_name = 'items'
+
+class ItemDetailView(generic.DetailView):
+    model = Item
+    template_name = 'core/item.html'
+    context_object_name = 'item'
