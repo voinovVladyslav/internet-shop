@@ -24,7 +24,9 @@
                         <h5 class="card-title">{{ item.name }}</h5>
                         <h5 class="card-title">{{ item.price }}$</h5>
                     </div>
-                    <a href="#" class="btn btn-primary">Select</a>
+                    <a href="{% url 'item' item.id %}" class="btn btn-primary"
+                        >Select</a
+                    >
                 </div>
             </div>
             {% endfor %}
