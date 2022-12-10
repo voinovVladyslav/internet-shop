@@ -1,6 +1,6 @@
 # media files
-media/
-
+media/**
+!media/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
